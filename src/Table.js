@@ -215,9 +215,15 @@ const Table = ({ data }) => (
           <div className="trend">x</div>
           <div className="crest">
             <img
-              style={{ height: "20px" }}
-              src={team.total.team.crestUrl || undefined}
+              style={{
+                height: "20px"
+              }}
+              src={team.total.team.crestUrl}
               alt={team.total.team.name}
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = "./favicon.png";
+              }}
             />
           </div>
           <div className="name">{team.total.team.name}</div>
