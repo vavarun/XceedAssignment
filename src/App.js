@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Standings from "./Standings";
+import { fetchStandings, joinTeamData } from "./services";
 
 class App extends Component {
+  state = {
+    loading: true,
+    data: []
+  };
+
+  getStandings = async () => {
+    const response = await fetchStandings();
+    const data = joinTeamData(response);
+    this.setState({ loading: false, data });
+  };
+
+  componentDidMount() {
+    this.getStandings();
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    const { data } = this.state;
+    console.log(data);
+    return <div className="App">{data && <Standings data={data} />}</div>;
   }
 }
 
