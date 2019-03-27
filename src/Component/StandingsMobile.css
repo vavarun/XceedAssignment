@@ -1,0 +1,6 @@
+.standingsMobileTable {
+  display: grid;
+  padding: 0px 0px 0px 0px;
+  grid-template-areas: "position trend crest name totalPts totalPld totalW totalD totalL totalGF totalGA";
+  grid-template-columns: repeat(3, 1fr) 225px repeat(7, 1fr);
+}

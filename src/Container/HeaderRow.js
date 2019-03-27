@@ -2,7 +2,7 @@ import React from "react";
 
 const HeaderRow = ({ matchDay }) => {
   return (
-    <div className="columnRow">
+    <div className="headerRow">
       <div style={{ fontSize: "25px" }}>Standings</div>
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}

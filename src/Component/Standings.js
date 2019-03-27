@@ -3,9 +3,11 @@ import Table from "../Container/Table";
 import ColumnRow from "../Container/ColumnRow";
 import HeaderRow from "../Container/HeaderRow";
 import TypeRow from "../Container/TypeRow";
+import "./Standings.css";
+import "./StandingsMobile.css";
 
 const Standings = ({ data, sort, matchDay, column }) => (
-  <div className="Standings-table">
+  <div className="Standings">
     <HeaderRow matchDay={matchDay} />
     <TypeRow />
     <ColumnRow column={column} sort={(name, type) => sort(name, type)} />

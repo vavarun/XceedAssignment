@@ -8,6 +8,10 @@ import {
   sortDataAlphabetically
 } from "./services";
 
+export const ThemeContext = React.createContext({
+  mobile: false // 850px triggers smaller table
+});
+
 class App extends Component {
   state = {
     loading: true,
@@ -37,23 +41,36 @@ class App extends Component {
     }
   };
 
+  setDevice = () => {
+    this.setState({ mobile: window.innerWidth < 850 ? true : false });
+  };
+
   componentDidMount() {
     this.getStandings();
+    window.addEventListener("resize", this.setDevice());
+    this.setDevice();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setDevice);
   }
 
   render() {
     const { data, matchDay, column } = this.state;
+    console.log(this.state);
     return (
-      <div className="App">
-        {data && (
-          <Standings
-            sort={(name, type) => this.sortColumn(name, type)}
-            data={data}
-            matchDay={matchDay}
-            column={column}
-          />
-        )}
-      </div>
+      <ThemeContext.Provider value={this.state}>
+        <div className="App">
+          {data && (
+            <Standings
+              sort={(name, type) => this.sortColumn(name, type)}
+              data={data}
+              matchDay={matchDay}
+              column={column}
+            />
+          )}
+        </div>
+      </ThemeContext.Provider>
     );
   }
 }
