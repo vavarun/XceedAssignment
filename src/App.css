@@ -22,3 +22,160 @@
   background: #102029;
   margin-top: 30px;
 }
+
+.standingsTable {
+  display: grid;
+  padding: 0px 0px 0px 0px;
+  grid-template-areas: "position trend crest name totalPts totalPld totalW totalD totalL totalGF totalGA homePts homePld homeW homeD homeL homeGF homeGA awayPts awayPld awayW awayD awayL awayGF awayGA";
+  grid-template-columns: repeat(3, 1fr) 225px repeat(21, 1fr);
+}
+.headingStyle {
+  background-color: #254151;
+  color: #f4fcc8;
+  font-size: 12px;
+  grid-template-rows: 35px;
+  align-self: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.rowStyle {
+  background-color: #102029;
+  color: #92daec;
+  font-size: 12px;
+  font-weight: normal;
+  grid-template-rows: 42px;
+  align-self: center;
+  font-weight: bold;
+  border-bottom: 1px solid #254151;
+}
+.position {
+  grid-area: position;
+  width: 30px;
+  align-self: center;
+  text-align: center;
+  color: #f4fcc8;
+}
+.trend {
+  grid-area: trend;
+  align-self: center;
+  text-align: center;
+}
+.crest {
+  grid-area: crest;
+  align-self: center;
+  text-align: center;
+}
+.name {
+  grid-area: name;
+  width: 225px;
+  align-self: center;
+  text-align: left;
+  color: white;
+  padding-left: 10px;
+  font-weight: 600;
+}
+.totalPts {
+  grid-area: totalPts;
+  align-self: center;
+  text-align: center;
+}
+.totalPld {
+  grid-area: totalPld;
+  align-self: center;
+  text-align: center;
+}
+.totalW {
+  grid-area: totalW;
+  align-self: center;
+  text-align: center;
+}
+.totalD {
+  grid-area: totalD;
+  align-self: center;
+  text-align: center;
+}
+.totalL {
+  grid-area: totalL;
+  align-self: center;
+  text-align: center;
+}
+.totalGF {
+  grid-area: totalGF;
+  align-self: center;
+  text-align: center;
+}
+.totalGA {
+  grid-area: totalGA;
+  align-self: center;
+  text-align: center;
+}
+.homePts {
+  grid-area: homePts;
+  align-self: center;
+  text-align: center;
+}
+.homePld {
+  grid-area: homePld;
+  align-self: center;
+  text-align: center;
+}
+.homeW {
+  grid-area: homeW;
+  align-self: center;
+  text-align: center;
+}
+.homeD {
+  grid-area: homeD;
+  align-self: center;
+  text-align: center;
+}
+.homeL {
+  grid-area: homeL;
+  align-self: center;
+  text-align: center;
+}
+.homeGF {
+  grid-area: homeGF;
+  align-self: center;
+  text-align: center;
+}
+.homeGA {
+  grid-area: homeGA;
+  align-self: center;
+  text-align: center;
+}
+.awayPts {
+  grid-area: awayPts;
+  align-self: center;
+  text-align: center;
+}
+.awayPld {
+  grid-area: awayPld;
+  align-self: center;
+  text-align: center;
+}
+.awayW {
+  grid-area: awayW;
+  align-self: center;
+  text-align: center;
+}
+.awayD {
+  grid-area: awayD;
+  align-self: center;
+  text-align: center;
+}
+.awayL {
+  grid-area: awayL;
+  align-self: center;
+  text-align: center;
+}
+.awayGF {
+  grid-area: awayGF;
+  align-self: center;
+  text-align: center;
+}
+.awayGA {
+  grid-area: awayGA;
+  align-self: center;
+  text-align: center;
+}

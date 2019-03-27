@@ -1,10 +1,8 @@
 import React from "react";
-import Table from "./Table";
+import Table from "../Container/Table";
 
 const Standings = ({ data }) => (
   <div className="Standings-table">
-    {console.log(data)}
-
     <Table data={data} />
   </div>
 );

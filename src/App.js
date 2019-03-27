@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Standings from "./Standings";
-import { fetchStandings, joinTeamData } from "./services";
+import Standings from "./Component/Standings";
+import { fetchStandings, joinTeamData, sortDataNumerically } from "./services";
 
 class App extends Component {
   state = {
     loading: true,
-    data: []
+    data: [],
+    column: []
   };
 
   getStandings = async () => {
@@ -15,13 +16,21 @@ class App extends Component {
     this.setState({ loading: false, data });
   };
 
+  sortColumn = args => {
+    const { data, column } = this.state;
+    if (column[0] === args.name) sortDataNumerically(data, ...args, column[1]);
+    else {
+      sortDataNumerically(data, ...args, "asc");
+      this.setState({ column: [args.name] });
+    }
+  };
+
   componentDidMount() {
     this.getStandings();
   }
 
   render() {
     const { data } = this.state;
-    console.log(data);
     return <div className="App">{data && <Standings data={data} />}</div>;
   }
 }
