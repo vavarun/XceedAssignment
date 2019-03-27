@@ -12,7 +12,7 @@ Runs the app in the development mode and access it on [http://localhost:3000] to
 
 1. App is missing trend and is marked by x, this is because the API provided does not provide standings on a weekly basis, just the latest one. I verified this by emails the API provider directly. Happy to implement it if an API is provided.
 
-2. Some team crest/icons were missing on the API url, so a default icon of LaLiga was placed instead.
+2. Some team crest/icons were missing (Sevilla and Athletic Club) on the API url, so a default icon of LaLiga was placed instead.
 
 3. There was no reason to use Redux for this assignment, instead have used the latest React.ContextProvider which is what the React team are promoting.
 
