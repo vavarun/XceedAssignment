@@ -1,6 +1,7 @@
 .App {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .App-header {
@@ -21,6 +22,18 @@
 .Standings-table {
   background: #102029;
   margin-top: 30px;
+  border-radius: 4px 4px 4px 4px;
+  overflow: hidden;
+}
+
+.columnRow {
+  background-color: #e06773;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  border-radius: 4px 4px 0 0;
 }
 
 .standingsTable {
@@ -29,11 +42,20 @@
   grid-template-areas: "position trend crest name totalPts totalPld totalW totalD totalL totalGF totalGA homePts homePld homeW homeD homeL homeGF homeGA awayPts awayPld awayW awayD awayL awayGF awayGA";
   grid-template-columns: repeat(3, 1fr) 225px repeat(21, 1fr);
 }
+
+.typeRow {
+  height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #f4fcc8;
+  background-color: #254151;
+}
+
 .headingStyle {
   background-color: #254151;
   color: #f4fcc8;
   font-size: 12px;
-  grid-template-rows: 35px;
+  grid-template-rows: 17px;
   align-self: center;
   font-weight: bold;
   cursor: pointer;
@@ -47,6 +69,22 @@
   align-self: center;
   font-weight: bold;
   border-bottom: 1px solid #254151;
+}
+
+.Type-clip {
+  grid-column: 5 / span 7;
+  text-align: center;
+  background-color: #254151;
+}
+.Type-home {
+  grid-column: 12 / span 7;
+  text-align: center;
+  background-color: #254151;
+}
+.Type-away {
+  grid-column: 19 / span 7;
+  text-align: center;
+  background-color: #254151;
 }
 .position {
   grid-area: position;

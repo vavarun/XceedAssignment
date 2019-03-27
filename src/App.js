@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Table from "./Container/Table";
+import Standings from "./Component/Standings";
 import {
   fetchStandings,
   joinTeamData,
@@ -18,7 +18,9 @@ class App extends Component {
   getStandings = async () => {
     const response = await fetchStandings();
     const data = joinTeamData(response);
-    this.setState({ loading: false, data });
+    const matchDay = response.season.currentMatchday;
+    console.log(matchDay);
+    this.setState({ loading: false, data, matchDay });
   };
 
   sortColumn = (name, type) => {
@@ -40,13 +42,15 @@ class App extends Component {
   }
 
   render() {
-    const { data } = this.state;
+    const { data, matchDay, column } = this.state;
     return (
       <div className="App">
         {data && (
-          <Table
+          <Standings
             sort={(name, type) => this.sortColumn(name, type)}
             data={data}
+            matchDay={matchDay}
+            column={column}
           />
         )}
       </div>
