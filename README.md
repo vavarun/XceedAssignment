@@ -23,3 +23,5 @@ Runs the app in the development mode and access it on [http://localhost:3000] to
 6. All columns can be sorted alphabetically or numerically.
 
 7. A very simple version of React.Context was setup to create a responsive app. Any window width less than 850px would trigger a mobile table.
+
+8. Implemented using a responsive CSS grid setup for the table.
