@@ -1,6 +1,6 @@
 Xceed Assignment
 
-This project was initiated by using Create React App and a little cleanup
+This project was scaffolded by using Create React App.
 
 To run the project
 
@@ -10,7 +10,7 @@ Runs the app in the development mode and access it on [http://localhost:3000] to
 
 ## Notes
 
-1. App is missing trend and is marked by x, this is because the API provided does not provide standings on a weekly basis, just the latest one. I verified this by emails the API provider directly. Happy to implement it if an API is provided.
+1. App is missing the position trend and is marked by x, this is because of API limitations. It does not provide standings on a weekly basis, just the latest one. I verified this by emailing the API service provider directly. Happy to implement it if a new API is provided.
 
 2. Some team crest/icons were missing (Sevilla and Athletic Club) on the API url, so a default icon of LaLiga was placed instead.
 
