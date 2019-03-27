@@ -8,7 +8,7 @@ const HeaderRow = ({ matchDay }) => {
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
       >
         <div>
-          <i class="fa fa-angle-left" style={{ fontSize: "30px" }} />
+          <i className="fa fa-angle-left" style={{ fontSize: "30px" }} />
         </div>
         <div
           style={{

@@ -1,5 +1,4 @@
 export const joinTeamData = apiData => {
-  console.log(apiData);
   const totalArr = apiData.standings.find(el => el.type === "TOTAL").table;
   const homeArr = apiData.standings.find(el => el.type === "HOME").table;
   const awayArr = apiData.standings.find(el => el.type === "AWAY").table;

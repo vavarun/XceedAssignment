@@ -23,7 +23,6 @@ class App extends Component {
     const response = await fetchStandings();
     const data = joinTeamData(response);
     const matchDay = response.season.currentMatchday;
-    console.log(matchDay);
     this.setState({ loading: false, data, matchDay });
   };
 
@@ -47,7 +46,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getStandings();
-    window.addEventListener("resize", this.setDevice());
+    window.addEventListener("resize", this.setDevice);
     this.setDevice();
   }
 
@@ -57,7 +56,6 @@ class App extends Component {
 
   render() {
     const { data, matchDay, column } = this.state;
-    console.log(this.state);
     return (
       <ThemeContext.Provider value={this.state}>
         <div className="App">

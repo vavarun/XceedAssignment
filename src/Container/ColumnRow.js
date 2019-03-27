@@ -14,11 +14,12 @@ const ColumnRow = ({ sort, column }) => (
           style={{ cursor: "pointer" }}
           onClick={() => sort("position", "total")}
         >
-          {column[0] === "position" && column[2] ? (
-            <i class="fa fa-caret-up" />
-          ) : (
-            <i class="fa fa-caret-down" />
-          )}
+          {column[0] === "position" &&
+            (column[2] ? (
+              <i className="fa fa-caret-up" />
+            ) : (
+              <i className="fa fa-caret-down" />
+            ))}
           #
         </div>
         <div className="trend" />
