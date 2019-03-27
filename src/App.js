@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import Standings from "./Component/Standings";
-import { fetchStandings, joinTeamData, sortDataNumerically } from "./services";
+import Table from "./Container/Table";
+import {
+  fetchStandings,
+  joinTeamData,
+  sortDataNumerically,
+  sortDataAlphabetically
+} from "./services";
 
 class App extends Component {
   state = {
     loading: true,
     data: [],
-    column: []
+    column: ["position", "total", true]
   };
 
   getStandings = async () => {
@@ -16,12 +21,17 @@ class App extends Component {
     this.setState({ loading: false, data });
   };
 
-  sortColumn = args => {
+  sortColumn = (name, type) => {
+    // true equals ascending order and false is descending
     const { data, column } = this.state;
-    if (column[0] === args.name) sortDataNumerically(data, ...args, column[1]);
-    else {
-      sortDataNumerically(data, ...args, "asc");
-      this.setState({ column: [args.name] });
+    if (column[0] === name && column[1] === type) {
+      if (name === "name") sortDataAlphabetically(data, name, type, !column[2]);
+      else sortDataNumerically(data, name, type, !column[2]);
+      this.setState({ column: [name, type, !column[2]] });
+    } else {
+      if (name === "name") sortDataAlphabetically(data, name, type, true);
+      else sortDataNumerically(data, name, type, true);
+      this.setState({ column: [name, type, false] });
     }
   };
 
@@ -31,7 +41,16 @@ class App extends Component {
 
   render() {
     const { data } = this.state;
-    return <div className="App">{data && <Standings data={data} />}</div>;
+    return (
+      <div className="App">
+        {data && (
+          <Table
+            sort={(name, type) => this.sortColumn(name, type)}
+            data={data}
+          />
+        )}
+      </div>
+    );
   }
 }
 

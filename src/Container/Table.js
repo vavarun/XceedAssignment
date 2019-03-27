@@ -1,44 +1,89 @@
 import React from "react";
 
-const Table = ({ data }) => (
+const Table = ({ data, sort }) => (
   <div>
     <div className="standingsTable headingStyle">
       <div
         className="position"
         style={{ cursor: "pointer" }}
-        onClick={() => console.log("blah")}
+        onClick={() => sort("position", "total")}
       >
         #
       </div>
       <div className="trend" />
       <div className="crest" />
-      <div className="name" />
+      <div
+        className="name"
+        style={{ height: "100%", weight: "100%" }}
+        onClick={() => sort("name", "total")}
+      />
 
-      <div className="totalPts">PTS</div>
-      <div className="totalPld">Pld</div>
-      <div className="totalW">W</div>
-      <div className="totalD">D</div>
-      <div className="totalL">L</div>
-      <div className="totalGF">GF</div>
-      <div className="totalGA">GA</div>
+      <div className="totalPts" onClick={() => sort("points", "total")}>
+        PTS
+      </div>
+      <div className="totalPld" onClick={() => sort("playedGames", "total")}>
+        Pld
+      </div>
+      <div className="totalW" onClick={() => sort("won", "total")}>
+        W
+      </div>
+      <div className="totalD" onClick={() => sort("draw", "total")}>
+        D
+      </div>
+      <div className="totalL" onClick={() => sort("lost", "total")}>
+        L
+      </div>
+      <div className="totalGF" onClick={() => sort("goalsFor", "total")}>
+        GF
+      </div>
+      <div className="totalGA" onClick={() => sort("goalsAgainst", "total")}>
+        GA
+      </div>
 
-      <div className="homePts">PTS</div>
-      <div className="homePld">Pld</div>
-      <div className="homeW">W</div>
-      <div className="homeD">D</div>
-      <div className="homeL">L</div>
-      <div className="homeGF">GF</div>
-      <div className="homeGA">GA</div>
+      <div className="homePts" onClick={() => sort("points", "home")}>
+        PTS
+      </div>
+      <div className="homePld" onClick={() => sort("gamesPlayed", "home")}>
+        Pld
+      </div>
+      <div className="homeW" onClick={() => sort("won", "home")}>
+        W
+      </div>
+      <div className="homeD" onClick={() => sort("draw", "home")}>
+        D
+      </div>
+      <div className="homeL" onClick={() => sort("lost", "home")}>
+        L
+      </div>
+      <div className="homeGF" onClick={() => sort("goalsFor", "home")}>
+        GF
+      </div>
+      <div className="homeGA" onClick={() => sort("goalsAgainst", "home")}>
+        GA
+      </div>
 
-      <div className="awayPts">PTS</div>
-      <div className="awayPld">Pld</div>
-      <div className="awayW">W</div>
-      <div className="awayD">D</div>
-      <div className="awayL">L</div>
-      <div className="awayGF">GF</div>
-      <div className="awayGA">GA</div>
+      <div className="awayPts" onClick={() => sort("points", "away")}>
+        PTS
+      </div>
+      <div className="awayPld" onClick={() => sort("gamesPlayed", "away")}>
+        Pld
+      </div>
+      <div className="awayW" onClick={() => sort("won", "away")}>
+        W
+      </div>
+      <div className="awayD" onClick={() => sort("draw", "away")}>
+        D
+      </div>
+      <div className="awayL" onClick={() => sort("lost", "away")}>
+        L
+      </div>
+      <div className="awayGF" onClick={() => sort("goalsFor", "away")}>
+        GF
+      </div>
+      <div className="awayGA" onClick={() => sort("goalsAgainst", "away")}>
+        GA
+      </div>
     </div>
-    {console.log(data)}
     {data.length &&
       data.map((team, i) => (
         <div key={i} className="standingsTable rowStyle">
