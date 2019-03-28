@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeContext } from "../App";
 
-const TypeRow = ({ sort }) => (
+const TypeRow = () => (
   <ThemeContext.Consumer>
     {({ mobile }) => (
       <div

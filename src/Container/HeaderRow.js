@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const HeaderRow = ({ matchDay }) => {
   const onArrowClick = () => alert(`Go to Matchday ${+matchDay - 1} standings`);
@@ -24,6 +25,10 @@ const HeaderRow = ({ matchDay }) => {
       </div>
     </div>
   );
+};
+
+HeaderRow.propTypes = {
+  matchDay: PropTypes.number
 };
 
 export default HeaderRow;

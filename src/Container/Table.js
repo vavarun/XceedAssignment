@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { ThemeContext } from "../App";
 
 class Table extends Component {
@@ -84,4 +85,9 @@ class Table extends Component {
     );
   }
 }
+
+Table.propTypes = {
+  data: PropTypes.object
+};
+
 export default Table;

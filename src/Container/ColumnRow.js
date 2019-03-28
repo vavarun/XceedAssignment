@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ThemeContext } from "../App";
 
 const ColumnRow = ({ sort, column }) => {
@@ -124,6 +125,11 @@ const ColumnRow = ({ sort, column }) => {
       )}
     </ThemeContext.Consumer>
   );
+};
+
+ColumnRow.propTypes = {
+  sort: PropTypes.func,
+  column: PropTypes.array
 };
 
 export default ColumnRow;

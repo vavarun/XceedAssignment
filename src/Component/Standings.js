@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Table from "../container/Table";
 import ColumnRow from "../container/ColumnRow";
 import HeaderRow from "../container/HeaderRow";
@@ -14,5 +15,12 @@ const Standings = ({ data, sort, matchDay, column }) => (
     <Table data={data} />
   </div>
 );
+
+Standings.propTypes = {
+  data: PropTypes.object,
+  sort: PropTypes.func,
+  matchDay: PropTypes.number,
+  column: PropTypes.array
+};
 
 export default Standings;
