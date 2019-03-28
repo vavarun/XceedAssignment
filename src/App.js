@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Standings from "./Component/Standings";
+import Standings from "./component/Standings";
 import {
   fetchStandings,
   joinTeamData,

@@ -9,11 +9,11 @@ const TypeRow = ({ sort }) => (
           mobile ? "standingsMobileTable" : "standingsTable"
         } typeRow`}
       >
-        <span className="Type-clip">Clips</span>
+        <span className="typeClip">Clips</span>
         {!mobile && (
           <>
-            <span className="Type-home">At home</span>
-            <span className="Type-away">Away</span>
+            <span className="typeHome">At home</span>
+            <span className="typeAway">Away</span>
           </>
         )}
       </div>

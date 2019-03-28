@@ -51,19 +51,19 @@
   border-bottom: 1px solid #254151;
 }
 
-.Type-clip {
+.typeClip {
   grid-column: 5 / span 7;
   text-align: center;
   background-color: #254151;
 }
 
-.Type-home {
+.typeHome {
   grid-column: 12 / span 7;
   text-align: center;
   background-color: #254151;
 }
 
-.Type-away {
+.typeAway {
   grid-column: 19 / span 7;
   text-align: center;
   background-color: #254151;

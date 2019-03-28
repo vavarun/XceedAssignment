@@ -1,8 +1,8 @@
 import React from "react";
-import Table from "../Container/Table";
-import ColumnRow from "../Container/ColumnRow";
-import HeaderRow from "../Container/HeaderRow";
-import TypeRow from "../Container/TypeRow";
+import Table from "../container/Table";
+import ColumnRow from "../container/ColumnRow";
+import HeaderRow from "../container/HeaderRow";
+import TypeRow from "../container/TypeRow";
 import "./Standings.css";
 import "./StandingsMobile.css";
 
