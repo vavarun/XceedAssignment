@@ -55,11 +55,13 @@ class App extends Component {
   }
 
   render() {
-    const { data, matchDay, column } = this.state;
+    const { loading, data, matchDay, column } = this.state;
     return (
       <ThemeContext.Provider value={this.state}>
         <div className="App">
-          {data && (
+          {loading && data ? (
+            <div className="loader" />
+          ) : (
             <Standings
               sort={(name, type) => this.sortColumn(name, type)}
               data={data}
